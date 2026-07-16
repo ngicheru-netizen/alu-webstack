@@ -4,7 +4,7 @@
 subdomain_info(){
 SUB_DOMAIN=$1
 DOMAIN=$2
-dig $SUB_DOMAIN.$DOMAIN | awk '{print "The subdomain '$SUB_DOMAIN' is a " $4 " record and points to " $5}'
+dig +noall +answer $SUB_DOMAIN.$DOMAIN | awk '{print "The subdomain '$SUB_DOMAIN' is a " $4 " record and points to " $5}'
 
 }
 
